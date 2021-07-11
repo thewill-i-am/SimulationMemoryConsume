@@ -7,7 +7,7 @@ The idea is to simulate the way in which an OS allocates memory.
 
 Then, the simulator will establish a series of days, and an amount of initial megabytes, every day those initial megabytes will be subtracted megabytes since they will be part of the consumption of a user.The average of these megabytes are 7000.
 
-double memoryOrder = generateMemoryUse (5000, 8000); 
+<code>double memoryOrder = generateMemoryUse (5000, 8000); </code>
 
 That's why I included that line above.
 
