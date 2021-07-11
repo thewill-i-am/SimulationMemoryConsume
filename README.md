@@ -17,3 +17,5 @@ So that is going to be subtracted from the number of initial megabytes, logicall
 
 
 <code>If the megabytes there are is less than 28000 -> then only 40% more megabytes can be assigned to the current megabytes.</code>
+
+If neither allocating the necessary resources can allocate the amount of memory that is needed, then a message is written that the amount of memory cannot be allocated because there are not the physical resources to do that
