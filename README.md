@@ -7,4 +7,13 @@ The idea is to simulate the way in which an OS allocates memory.
 
 Then, the simulator will establish a series of days, and an amount of initial megabytes, every day those initial megabytes will be subtracted megabytes since they will be part of the consumption of a user.The average of these megabytes are 7000.
 
-double memoryOrder = generateMemoryUse (5000, 8000); / * What this line does is generate a random use per day of memory on average that would be like 7000 or something like that * /
+double memoryOrder = generateMemoryUse (5000, 8000); 
+
+That's why I included that line above.
+
+So that is going to be subtracted from the number of initial megabytes, logically the megabytes will be spent at some point when that happens there is a method "generateMemoryAlocation ()", which basically what it does is allocate more memory if there is not enough , this has some interesting specs like:
+
+If the megabytes there are is greater than 28000 -> then only 31% more megabytes can be assigned to the current megabytes.
+
+
+If the megabytes there are is less than 28000 -> then only 40% more megabytes can be assigned to the current megabytes.
