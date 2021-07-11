@@ -13,7 +13,7 @@ That's why I included that line above.
 
 So that is going to be subtracted from the number of initial megabytes, logically the megabytes will be spent at some point when that happens there is a method <code>generateMemoryAlocation ()</code>, which basically what it does is allocate more memory if there is not enough , this has some interesting specs like:
 
-If the megabytes there are is greater than 28000 -> then only 31% more megabytes can be assigned to the current megabytes.
+<code>If the megabytes there are is greater than 28000 -> then only 31% more megabytes can be assigned to the current megabytes.</code>
 
 
-If the megabytes there are is less than 28000 -> then only 40% more megabytes can be assigned to the current megabytes.
+<code>If the megabytes there are is less than 28000 -> then only 40% more megabytes can be assigned to the current megabytes.</code>
