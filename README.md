@@ -11,7 +11,7 @@ double memoryOrder = generateMemoryUse (5000, 8000);
 
 That's why I included that line above.
 
-So that is going to be subtracted from the number of initial megabytes, logically the megabytes will be spent at some point when that happens there is a method "generateMemoryAlocation ()", which basically what it does is allocate more memory if there is not enough , this has some interesting specs like:
+So that is going to be subtracted from the number of initial megabytes, logically the megabytes will be spent at some point when that happens there is a method <code>generateMemoryAlocation ()</code>, which basically what it does is allocate more memory if there is not enough , this has some interesting specs like:
 
 If the megabytes there are is greater than 28000 -> then only 31% more megabytes can be assigned to the current megabytes.
 
