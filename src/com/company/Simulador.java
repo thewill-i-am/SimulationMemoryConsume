@@ -55,9 +55,11 @@ public class Simulador {
 
     private double recorrerDia(){
         for (int i = 0; i < _cantidadDias; i++) {
+            utilitario.mostrar("------------------------------- DIA " + (i+1) +  "--------------------------------------");
             double pedidoDeMemoria = 7000;
             utilitario.mostrar("En el dia " + (i + 1) + " se quiere guardar la siguiente cantidad de megas : " + pedidoDeMemoria + " y hay la siguiente cantidad de megas disponibles para asignar: " + _megas);
             generarAsignacionDeMemoria();
+            utilitario.mostrar("Ahora presenta la siguiente cantidad luego de adicionarle espacio: "+ _megas);
             if (pedidoDeMemoria <= _megas){
                 disminuirMemoria(pedidoDeMemoria);
             }else{
@@ -67,6 +69,7 @@ public class Simulador {
                     disminuirMemoria(pedidoDeMemoria);
                 }
             }
+            utilitario.mostrar("La cantidad de megas actuales es " + _megas);
         }
         return _megas;
     }

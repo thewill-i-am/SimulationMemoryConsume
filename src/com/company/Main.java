@@ -8,6 +8,10 @@ public class Main {
         Simulador simulador =  new Simulador(utilitario.lector("Por favor intoduzca la cantidad de megas inciales: "),
                 dias);
         double megasSobrantes = simulador.ejecucion();
+
+        utilitario.mostrar("");
+        utilitario.mostrar("------------------------- Resultados finales ------------------------------");
+
         utilitario.mostrar("La cantidad de megas sobrantes son: "  + megasSobrantes + " despues de : "+ dias + " dias");
     }
 }
