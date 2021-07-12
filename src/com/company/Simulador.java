@@ -27,8 +27,7 @@ public class Simulador {
         return usoDeMemoria;
     }
 
-    private boolean generarAsignacionDeMemoria(double pedidoDeMemoria){
-        double memoriaFaltante = _megas - pedidoDeMemoria;
+    private void generarAsignacionDeMemoria(){
         double megasPosiblesParaAsignar =  0;
 
         if(_megas < _megasMaximas){
@@ -36,12 +35,18 @@ public class Simulador {
         }else{
             megasPosiblesParaAsignar = _megas * 0.31;
         }
-
-        if (Math.abs(memoriaFaltante)  > megasPosiblesParaAsignar){
-            return false;
-        }
         _megas = _megas + megasPosiblesParaAsignar;
-        return true;
+        utilitario.mostrar("Se le asigno: "+ megasPosiblesParaAsignar);
+
+    }
+
+    private boolean sePuedeAsignarLaMemoria(double pedidoDeMemoria){
+        double memoriaFaltante = _megas - pedidoDeMemoria;
+        if (memoriaFaltante < 0){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     private void disminuirMemoria(double pedidoDeMemoria){
@@ -50,13 +55,13 @@ public class Simulador {
 
     private double recorrerDia(){
         for (int i = 0; i < _cantidadDias; i++) {
-            double pedidoDeMemoria = generarUsoDeMemoria(5000, 8000); /* Esta linea lo que hace es generar un uso random por dia de memoria en promedio eso seria como 7000 o algo asi  */
-            utilitario.mostrar("En el dia " + (i + 1) + " se quiere guardar la siguiente cantidad de megas :" + pedidoDeMemoria + " y hay la siguiente cantidad de megas disponibles para asignar: " + _megas);
+            double pedidoDeMemoria = 7000;
+            utilitario.mostrar("En el dia " + (i + 1) + " se quiere guardar la siguiente cantidad de megas : " + pedidoDeMemoria + " y hay la siguiente cantidad de megas disponibles para asignar: " + _megas);
+            generarAsignacionDeMemoria();
             if (pedidoDeMemoria <= _megas){
                 disminuirMemoria(pedidoDeMemoria);
             }else{
-                boolean sePuedeAgregarMemoria = generarAsignacionDeMemoria(pedidoDeMemoria);
-                if(!sePuedeAgregarMemoria){
+                if(!sePuedeAsignarLaMemoria(pedidoDeMemoria)){
                     utilitario.mostrar("No es posible incluir el proceso, no tenemos la suficiente memoria, esto sucedio en el dia: " + (i +1));
                 }else {
                     disminuirMemoria(pedidoDeMemoria);
